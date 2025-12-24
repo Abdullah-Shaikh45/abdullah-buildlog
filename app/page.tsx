@@ -1,6 +1,12 @@
+"use client";
 import Image from "next/image";
 
 export default function Home() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <main className="min-h-screen px-6 py-20 flex justify-center bg-white">
       <div
@@ -27,16 +33,21 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 w-full">
-            <button className="bg-[#B6F000] text-[#111111] px-5 py-3 rounded-xl font-semibold hover:bg-[#9AD400] w-full sm:w-auto text-center">
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="bg-[#B6F000] text-[#111111] px-5 py-3 rounded-xl font-semibold hover:bg-[#9AD400] w-full sm:w-auto text-center"
+            >
               See What I’m Building
             </button>
 
-            <button className="border border-gray-300 text-[#111111] px-5 py-3 rounded-xl font-semibold w-full sm:w-auto text-center">
+            <button
+              onClick={() => scrollToSection("timeline")}
+              className="border border-gray-300 text-[#111111] px-5 py-3 rounded-xl font-semibold w-full sm:w-auto text-center"
+            >
               Read My Journey
             </button>
           </div>
         </section>
-
 
         <section className="space-y-5">
           <h2 className="text-2xl font-bold text-[#111111]">
@@ -44,7 +55,7 @@ export default function Home() {
           </h2>
 
           <p className="max-w-2xl text-[#525252] leading-relaxed">
-            This isn’t a <strong className="text-[#111111]">portfolio</strong>.
+            This isn’t a <strong className="text-[#030303] ">portfolio</strong>.
             It’s not a <strong className="text-[#111111]">resume</strong>{" "}
             either.
             <br />
@@ -57,7 +68,6 @@ export default function Home() {
             pretending to have everything figured out.
           </p>
         </section>
-
 
         <section className="space-y-5">
           <h2 className="text-2xl font-bold text-[#111111]">Why I build</h2>
@@ -78,8 +88,7 @@ export default function Home() {
           </p>
         </section>
 
-
-        <section className="space-y-10">
+        <section id="projects" className="space-y-10">
           <div className="space-y-5">
             <h2 className="text-2xl font-bold text-[#111111]">
               Things I’m building
@@ -132,15 +141,14 @@ export default function Home() {
                     {item.title}
                   </h3>
 
-                  <span className="text-xs font-medium px-2 py-1 rounded-full bg-gray-100 text-[#525252]">
+                  {/* <span className="text-xs font-medium px-2 py-1 rounded-full bg-gray-100 text-[#525252]">
                     {item.status}
-                  </span>
+                  </span> */}
                 </div>
 
                 <p className="text-sm text-[#525252] leading-relaxed">
                   {item.desc}
                 </p>
-
 
                 <p className="text-sm text-[#737373] leading-relaxed">
                   <span className="font-medium text-[#111111]">Intent:</span>{" "}
@@ -150,7 +158,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
 
         <section className="space-y-6">
           <h2 className="text-2xl font-bold text-[#111111]">
@@ -185,8 +192,7 @@ export default function Home() {
           </ul>
         </section>
 
-
-        <section className="space-y-6">
+        <section id="timeline" className="space-y-6">
           <h2 className="text-2xl font-bold text-[#111111]">Growth timeline</h2>
 
           <p className="max-w-2xl text-[#525252] leading-relaxed">
@@ -194,9 +200,7 @@ export default function Home() {
             evolved over time.
           </p>
 
- 
           <div className="relative max-w-2xl rounded-2xl border border-gray-200 bg-white px-6 py-8">
-
             <div className="absolute left-6 top-8 bottom-8 w-px bg-gray-200" />
 
             <div className="space-y-8">
@@ -211,7 +215,6 @@ export default function Home() {
                 </div>
               </div>
 
-
               <div className="relative flex gap-6">
                 <div className="relative z-10 h-3 w-3 mt-1 rounded-full bg-[#111111]" />
                 <div>
@@ -223,7 +226,6 @@ export default function Home() {
                 </div>
               </div>
 
-
               <div className="relative flex gap-6">
                 <div className="relative z-10 h-3 w-3 mt-1 rounded-full bg-[#111111]" />
                 <div>
@@ -234,7 +236,6 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-
 
               <div className="relative flex gap-6">
                 <div className="relative z-10 h-3 w-3 mt-1 rounded-full bg-[#B6F000]" />
@@ -252,23 +253,25 @@ export default function Home() {
           </div>
         </section>
 
-
-
         <section className="space-y-5">
-  <h2 className="text-2xl font-bold text-[#111111]">
-    Let’s build together
-  </h2>
+          <h2 className="text-2xl font-bold text-[#111111]">
+            Let’s build together
+          </h2>
 
-  <p className="max-w-2xl text-[#525252] leading-relaxed">
-    If you’re building something meaningful, exploring an idea,
-    or just want to exchange thoughts I’m always open to a conversation.
-  </p>
+          <p className="max-w-2xl text-[#525252] leading-relaxed">
+            If you’re building something meaningful, exploring an idea, or just
+            want to exchange thoughts I’m always open to a conversation.
+          </p>
 
-  <button className="bg-[#B6F000] px-6 py-3 text-[#111111] rounded-xl font-semibold hover:bg-[#9AD400] transition">
-    Connect 
-  </button>
-</section>
-
+          <button
+            onClick={() =>
+              window.open("mailto:abdullah.shaikh76ir@gmail.com", "_blank")
+            }
+            className="bg-[#B6F000] px-6 py-3 text-[#111111] rounded-xl font-semibold hover:bg-[#9AD400] transition"
+          >
+            Connect
+          </button>
+        </section>
       </div>
     </main>
   );
