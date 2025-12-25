@@ -26,7 +26,7 @@ export default function Home() {
 
           <p className="max-w-2xl text-lg text-[#525252]">
             I’m a product-focused creative at{" "}
-            <strong className="text-[#111111]">LixaNetwork</strong> and a
+            <strong className="text-[#111111]">Lixta Network</strong> and a
             co-founder of <strong className="text-[#111111]">Komunity</strong>,
             where I design thoughtful systems that bring people, products, and
             progress into alignment.
