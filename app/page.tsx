@@ -61,9 +61,7 @@ export default function Home() {
             <br />
             <br />
             It’s a <strong className="text-[#111111]">living record</strong> of
-            someone
-            <strong className="text-[#111111]"> building in public</strong>,
-            learning deliberately, moving forward imperfectly and focusing on
+            someone learning deliberately, moving forward imperfectly and focusing on
             <strong className="text-[#111111]"> meaningful work</strong> without
             pretending to have everything figured out.
           </p>
